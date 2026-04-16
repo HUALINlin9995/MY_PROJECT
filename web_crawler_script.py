@@ -34,7 +34,7 @@ def requests_text(url):
         print(f"爬取出错: {url}, 错误: {e}")
     return ''
 
-# ===================== 多线程核心 =====================
+# 多线程
 url_queue = Queue()    # 任务队列
 result_dict = {}       # 存储爬取结果
 lock = threading.Lock()# 线程锁
@@ -77,7 +77,6 @@ def requests_textall_multi(the_httpd):
             writer.writerow([cat, datas])
 
     print('所有内容爬取完毕，已保存到 thedata.csv')
-# ======================================================
 
 def read_csv(filenames):
     csv_user_data={}
