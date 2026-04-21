@@ -1,0 +1,22 @@
+<!--pages/cmd/cmd.wxml-->
+<global-alert />
+<view class="container">
+  <!-- 标题 -->
+  <view class="header">
+    <text class="header-title">开发板命令行</text>
+  </view>
+  
+  <!-- 命令显示框 -->
+  <view class="display-box">
+    <view wx:for="{{commandHistory}}" wx:key="index" class="command-item">
+      <text wx:if="{{item.type === 'user'}}" class="command-prefix">USER></text>
+      <text wx:else class="server-prefix">6818-client></text>
+      <text class="command-text">{{item.content}}</text>
+    </view>
+  </view>
+  
+  <!-- 输入框 -->
+  <view class="input-box">
+    <input id='cmdInput' value="{{inputValue}}" bindconfirm='input_cmd' class='input' name='cmd' placeholder="请输入命令,输入cls清屏" auto-focus="True" />
+  </view>
+</view>

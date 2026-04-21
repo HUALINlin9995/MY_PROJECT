@@ -1,0 +1,47 @@
+<!--pages/open_wallpaper/open_wallpaper.wxml-->
+<global-alert />
+<view class="page">
+  <!-- 顶部操作栏 -->
+  <view class="top-bar">
+    <text wx:if="{{!isSelectMode}}" class="title">壁纸管理</text>
+    <view wx:if="{{isSelectMode}}" class="select-mode-bar">
+      <text class="selected-count">已选择 {{selectedImages.length}} 张</text>
+      <button class="cancel-btn" bindtap="exitSelectMode">取消</button>
+      <button class="delete-btn" bindtap="deleteSelectedImages">删除</button>
+    </view>
+    <button wx:if="{{!isSelectMode}}" class="edit-btn" bindtap="enterSelectMode">编辑</button>
+  </view>
+  
+  <!-- 图片列表 -->
+  <view class="image-list">
+    <view class="view-container {{selectedImages.includes(item) ? 'selected' : ''}}" wx:for="{{swiperList}}" wx:key="*this">
+      <image src="{{item}}" 
+             bindtap="{{isSelectMode ? 'selectImage' : 'previewImage'}}" 
+             data-src="{{item}}"></image>
+      <!-- 选择框 -->
+      <view wx:if="{{isSelectMode}}" class="select-box" 
+            data-src="{{item}}" 
+            catchtap="selectImage">
+        <view class="checkbox {{selectedImages.includes(item) ? 'checked' : ''}}">
+          <text wx:if="{{selectedImages.includes(item)}}" class="checkmark">✓</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 预览界面 -->
+  <view class="preview-container" wx:if="{{showPreview}}">
+    <image src="{{previewImage}}" class="preview-image"></image>
+    <view class="preview-footer">
+      <button class="set-wallpaper-btn" bindtap="setWallpaper" data-index="{{index}}">设置为壁纸</button>
+      <button class="close-btn" bindtap="closePreview">关闭</button>
+    </view>
+  </view>
+  
+  <!-- 加号按钮 -->
+  <view class="add-btn" bindtap="addWallpaper" data-type="image">
+    <text class="add-icon">+</text>
+  </view>
+</view>
+
+a

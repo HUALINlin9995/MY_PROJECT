@@ -1,0 +1,205 @@
+.top-bar {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+  background-color: #1a1a1a;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.title {
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: bold;
+}
+
+.edit-btn {
+  background-color: transparent;
+  color: #F86B1D;
+  border: none;
+  font-size: 28rpx;
+  padding: 0;
+}
+
+.select-mode-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selected-count {
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.cancel-btn {
+  background-color: transparent;
+  color: #999;
+  border: none;
+  font-size: 28rpx;
+  padding: 0;
+}
+
+.delete-btn {
+  background-color: #F86B1D;
+  color: #fff;
+  border: none;
+  font-size: 28rpx;
+  padding: 10rpx 30rpx;
+  border-radius: 4rpx;
+}
+
+.image-list {
+  padding: 20rpx 0;
+}
+
+.view-container {
+  width: 752rpx;
+  height: 430rpx;
+  overflow: hidden;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20rpx auto;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.view-container.selected {
+  border: 4rpx solid #4CAF50;
+  transform: scale(0.98);
+}
+
+.view-container.selected::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(76, 175, 80, 0.2);
+  z-index: 1;
+}
+
+.view-container image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* 选择框样式 */
+.select-box {
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  z-index: 10;
+}
+
+.checkbox {
+  width: 40rpx;
+  height: 40rpx;
+  border: 2rpx solid #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.checkbox.checked {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+}
+
+.checkmark {
+  color: #fff;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  overflow-y: auto;
+  background-color: #000;
+  padding: 20rpx 0;
+}
+
+/* 预览界面样式 */
+.preview-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.preview-image {
+  width: 752rpx;
+  height: 430rpx;
+  object-fit: cover;
+  display: block;
+}
+
+.preview-footer {
+  position: absolute;
+  bottom: 100rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40rpx;
+}
+
+.set-wallpaper-btn {
+  background-color: #F86B1D;
+  color: #fff;
+  border-radius: 50rpx;
+  padding: 20rpx 60rpx;
+  font-size: 32rpx;
+  border: none;
+}
+
+.close-btn {
+  background-color: #666;
+  color: #fff;
+  border-radius: 50rpx;
+  padding: 20rpx 60rpx;
+  font-size: 32rpx;
+  border: none;
+}
+
+/* 加号按钮样式 */
+.add-btn {
+  position: fixed;
+  bottom: 100rpx;
+  right: 40rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: #F86B1D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.2);
+}
+
+.add-icon {
+  color: #fff;
+  font-size: 60rpx;
+  font-weight: bold;
+  line-height: 1;
+}

@@ -1,0 +1,19 @@
+/* pages/message/message.wxss */
+.message-container {
+  padding: 20rpx;
+}
+
+.message-box {
+  background-color: #ffffff;
+  border-radius: 32rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  padding: 32rpx;
+  margin-bottom: 20rpx;
+  border: 1rpx solid #f0f0f0;
+}
+
+.message-content {
+  font-size: 32rpx;
+  line-height: 48rpx;
+  color: #333333;
+}
