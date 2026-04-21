@@ -1,0 +1,57 @@
+<!--pages/open_video/open_video.wxml-->
+<global-alert />
+<view class="page-container">
+  <view class="video-list">
+    <view class="video-item" wx:for="{{swiperList}}" wx:key="index">
+      <video 
+        id="video-{{index}}"
+        class="video-player"
+        src="{{item}}"
+        controls
+        show-center-play-btn
+        enable-progress-gesture
+        object-fit="contain"
+      ></video>
+      <view class="button-group">
+        <view class="icon-btn play-btn" bindtap="onRemotePlay" data-index="{{index}}">
+          <text class="btn-text">↑</text>
+        </view>
+        <view class="icon-btn delete-btn" bindtap="onDeleteVideo" data-index="{{index}}">
+          <text class="btn-text">×</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="add-btn" bindtap="addMovie" data-type="movie">
+    <text class="add-icon">+</text>
+  </view>
+
+  <!-- 时间选择模态框 -->
+  <view class="modal" wx:if="{{showTimePicker}}">
+    <view class="modal-content">
+      <view class="modal-header">
+        <text class="modal-title">选择播放时间</text>
+        <text class="modal-close" bindtap="closeTimePicker">×</text>
+      </view>
+      <view class="picker-container">
+        <picker-view 
+          indicator-style="height: 50rpx;" 
+          style="width: 100%; height: 300rpx;" 
+          value="{{pickerValue}}" 
+          bindchange="onTimeChange"
+        >
+          <picker-view-column>
+            <view wx:for="{{timeOptions}}" wx:key="index" style="line-height: 50rpx; text-align: center;">
+              {{item}}
+            </view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+      <view class="modal-footer">
+        <button class="cancel-btn" bindtap="closeTimePicker">取消</button>
+        <button class="confirm-btn" bindtap="confirmTimeSelection">确定</button>
+      </view>
+    </view>
+  </view>
+</view>

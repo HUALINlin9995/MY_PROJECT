@@ -1,0 +1,141 @@
+/* pages/home/home.wxss */
+swiper{
+  height:350rpx;
+}
+swiper image{
+  width: 100%;
+  height: 100%;
+}
+
+/* 选择指示器容器 */
+.selection-indicator {
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  width: 50rpx;
+  height: 50rpx;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* 选中状态显示 */
+.selection-indicator.selected {
+  opacity: 1;
+}
+
+/* 圆圈样式 */
+.selection-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4rpx solid #ffffff;
+  background-color: transparent;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.3);
+}
+
+/* 选中状态的绿色圆圈 */
+.selection-indicator.selected .selection-circle {
+  background-color: #4CAF50; /* 绿色 */
+  border-color: #45a049;
+}
+
+/* 按钮容器 */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx;
+  gap: 40rpx;
+}
+
+/* 按钮样式 */
+.button-container button {
+  width: 100%;
+  height: 200rpx;
+  border-radius: 30rpx;
+  box-shadow: 0 10rpx 20rpx rgba(0, 0, 0, 0.3);
+  border: none;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100rpx; 
+}
+
+/* 第一个按钮 - 设置壁纸 */
+.button-container button:nth-child(1) {
+  background-color: #F86B1D;
+}
+
+/* 第二个按钮 - 播放视频 */
+.button-container button:nth-child(2) {
+  background-color: #F596AA;
+}
+
+/* 第三个按钮 - 播放音频 */
+.button-container button:nth-child(3) {
+  background-color: #FE6672;
+}
+
+.btn-icon {
+  width: 120rpx; 
+  height: 100rpx;
+}
+
+
+.upload-box {
+  background: #11d6bb;
+  color: white;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.upload-box:active {
+  background: #11d6bb;
+  transform: scale(0.95);
+}
+
+.upload-container {
+  position: fixed;
+  bottom: 40rpx;
+  right: 40rpx;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+.text-display {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 60rpx 0 0 60rpx;
+  padding: 0 30rpx;
+  margin-right: -30rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.2);
+  max-width: 400rpx;
+  overflow: hidden;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+}
+
+.text-content {
+  font-size: 32rpx;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.upload-image {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 3rpx;
+}
