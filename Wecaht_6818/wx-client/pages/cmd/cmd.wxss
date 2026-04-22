@@ -1,0 +1,100 @@
+/* pages/cmd/cmd.wxss */
+
+/* 容器 */
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+
+/* 标题栏 */
+.header {
+  width: calc(100% - 40rpx);
+  margin: 0 20rpx;
+  background-color: #1A497D;
+  padding: 10rpx;
+  box-sizing: border-box;
+  text-align: center;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+}
+
+.header-title {
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+/* 命令显示框 */
+.display-box {
+  flex: 1;
+  width: calc(100% - 40rpx);
+  margin: 0 20rpx;
+  border: 2rpx solid #1A497D;
+  border-top: none;
+  background-color: #fff;
+  padding: 20rpx;
+  box-sizing: border-box;
+  overflow-y: auto;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+
+/* 命令项 */
+.command-item {
+  padding: 10rpx 0;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  align-items: center;
+}
+
+.command-item:last-child {
+  border-bottom: none;
+}
+
+/* 命令前缀 USER> */
+.command-prefix {
+  font-size: 28rpx;
+  color: #1A497D;
+  font-family: monospace;
+  font-weight: bold;
+  margin-right: 10rpx;
+}
+
+/* 服务器前缀 6818-client> */
+.server-prefix {
+  font-size: 28rpx;
+  color: #00C851;
+  font-family: monospace;
+  font-weight: bold;
+  margin-right: 10rpx;
+}
+
+/* 命令文本 */
+.command-text {
+  font-size: 28rpx;
+  color: #333;
+  font-family: monospace;
+}
+
+/* 输入框容器 - 固定在底部 */
+.input-box {
+  width: calc(100% - 40rpx);
+  margin: 10rpx 20rpx 20rpx;
+  border: 2rpx solid #1A497D;
+  background-color: #fff;
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+}
+
+/* 输入框 */
+.input {
+  width: 100%;
+  height: 60rpx;
+  font-size: 28rpx;
+  color: #333;
+}

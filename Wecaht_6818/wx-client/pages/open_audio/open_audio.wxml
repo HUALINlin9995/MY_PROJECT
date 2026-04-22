@@ -1,0 +1,93 @@
+<global-alert />
+<view class="container">
+  <!-- 音频列表 - 移到上面 -->
+  <view class="list">
+    <view class="item" wx:for="{{audioList}}" wx:key="*index">
+      <!-- 播放/暂停按钮 -->
+      <view class="play-btn" data-index="{{index}}" bindtap="togglePlay">
+        <text wx:if="{{playingIndex !== index}}">▶</text>
+        <text wx:else>⏸</text>
+      </view>
+
+      <!-- 音频信息 -->
+      <view class="info">
+        <!-- 使用原文件名，如果没有则显示默认名称 -->
+        <text class="title">{{item.originalName || item.name || '未命名音频'}}</text>
+        
+        <!-- 进度条 -->
+        <view class="progress-bar show" wx:if="{{playingIndex === index}}">
+          <view class="progress" style="width: {{progress}}%"></view>
+        </view>
+        
+        <!-- 时间显示 -->
+        <view class="time">
+          {{playingIndex === index ? currentTime + ' / ' + duration : duration}}
+        </view>
+      </view>
+
+      <!-- 向上箭头按钮 -->
+      <view class="arrow-btn" data-index="{{index}}" bindtap="playRemoteAudio">
+        <text>↑</text>
+      </view>
+      
+      <!-- 删除按钮 -->
+      <view class="delete-btn" data-index="{{index}}" bindtap="deleteAudio">
+        <text>×</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 录音按钮 - 移到底部 -->
+  <view class="upload-container" style="bottom: 180rpx;">
+    <view class="upload-box" bindtap="showRecordPanel">
+      <image src="/pages/img/录音.png" style="width: 60rpx; height: 60rpx;" />
+    </view>
+  </view>
+
+  <!-- 录音控制面板 -->
+  <view class="record-panel" wx:if="{{showRecordPanel}}">
+    <view class="record-panel-content">
+      <view class="record-title">录音</view>
+      
+      <!-- 录音时间 -->
+      <view class="record-time" wx:if="{{isRecording}}">
+        {{recordTime}}秒
+      </view>
+      
+      <!-- 录音控制按钮 -->
+      <view class="record-controls">
+        <view wx:if="{{!isRecording}}" class="record-btn" bindtap="startRecord">
+          开始录音
+        </view>
+        <view wx:else class="stop-btn" bindtap="stopRecord">
+          停止录音
+        </view>
+      </view>
+      
+      <!-- 录音预览和发送 -->
+      <view class="record-preview" wx:if="{{recordFilePath && !isRecording}}">
+        <view class="preview-title">录音预览</view>
+        <view class="preview-controls">
+          <view class="play-preview-btn" bindtap="previewRecord">
+            {{previewing ? '停止预览' : '播放预览'}}
+          </view>
+          <view class="send-btn" bindtap="sendRecord">
+            确认发送
+          </view>
+        </view>
+      </view>
+      
+      <!-- 关闭按钮 -->
+      <view class="close-btn" bindtap="hideRecordPanel">
+        关闭
+      </view>
+    </view>
+  </view>
+
+  <!-- 上传按钮 - 移到底部 -->
+  <view class="upload-container">
+    <view class="upload-box" bindtap="uploadAudio">
+      <text class="upload-text">+</text>
+    </view>
+  </view>
+</view>

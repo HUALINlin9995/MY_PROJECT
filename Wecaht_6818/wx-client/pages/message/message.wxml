@@ -1,0 +1,7 @@
+<!--pages/message/message.wxml-->
+<global-alert />
+<view class="message-container">
+  <view wx:for="{{messageList}}" wx:key="index" class="message-box">
+    <text class="message-content">{{item}}</text>
+  </view>
+</view>
