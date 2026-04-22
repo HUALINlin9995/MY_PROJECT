@@ -1,8 +1,0 @@
-{
-  "usingComponents": {},
-  "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "命令行",
-  "navigationBarBackgroundColor": "#1A497D",
-  "enablePullDownRefresh": false,
-  "disableScroll": true
-}
