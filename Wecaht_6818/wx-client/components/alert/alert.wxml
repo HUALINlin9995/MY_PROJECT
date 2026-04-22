@@ -1,5 +1,0 @@
-<view class="alert-box" wx:if="{{show}}">
-  <text class="alert-icon">⚠️</text>
-  <text class="alert-text">{{text}}</text>
-  <view class="alert-close" bindtap="onClose">×</view>
-</view>
