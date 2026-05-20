@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>512x512.png</file>
+        <file>Meme_4.png</file>
+        <file>logo.png</file>
+        <file>images/clear.png</file>
+        <file>images/color.png</file>
+        <file>images/save.png</file>
+        <file>images/sending.png</file>
+        <file>images/friendadd.png</file>
+        <file>images/frienddel.png</file>
+    </qresource>
+</RCC>
